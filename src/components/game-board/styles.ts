@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Coordinate } from "./types";
+
 export const StyledGameBoard = styled.div`
   border-radius: 100px;
   display: grid;
@@ -13,8 +14,8 @@ export const Snake = styled.div<{ position: Coordinate }>`
     return css`
       grid-column: ${x};
       grid-row: ${y};
-      background-color: #414141;
-      border: #5a5a5a 1px dotted;
+      background-color: var(--primary);
+      border: var(--snake-border) 1px dotted;
     `;
   }}
 `;
@@ -24,8 +25,8 @@ export const Food = styled.div<{ position: Coordinate }>`
     return css`
       grid-column: ${x};
       grid-row: ${y};
-      background-color: #dedede;
-      border: #999 5px solid;
+      background-color: var(--food-bg);
+      border: var(--food-border) 5px solid;
     `;
   }}
 `;

@@ -46,6 +46,7 @@ const GameBoard = ({
     resetGame();
     setSnake([STARTING_SNAKE_COORDINATE]);
     setGameSpeedDelay(STARTING_GAME_SPEED_DELAY);
+    directionRef.current = Direction.Right;
   }, [resetGame]);
 
   const checkCollision = useCallback(() => {

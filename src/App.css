@@ -1,13 +1,379 @@
+:root {
+  /* outer-border is also the score color */
+  --outer-border: #595f43;
+  --middle-border: #abb78a;
+  --inner-border: #8b966c;
+  --food-border: #999;
+  --snake-border: #5a5a5a;
+  --primary-text: #333;
+  --secondary-text: #d8ddca;
+  --food-bg: #dedede;
+  --primary: #414141;
+  --secondary: #c4cfa3;
+}
+
+.app.pipboy {
+  --outer-border: #1b3402;
+  --middle-border: #2e5404;
+  --inner-border: #3c6f05;
+  --food-border: #4c8a06;
+  --snake-border: #5aa507;
+  --primary-text: #bfffb0;
+  --secondary-text: #7edb09;
+  --food-bg: #90f60a;
+  --primary: #0b1e01;
+  --secondary: #6cc008;
+}
+
+.app.gruvbox {
+  --outer-border: #504945;
+  --middle-border: #b8bb26;
+  --inner-border: #d65d0e;
+  --food-border: #d79921;
+  --snake-border: #fb4934;
+  --primary-text: #ebdbb2;
+  --secondary-text: #bdae93;
+  --food-bg: #fabd2f;
+  --primary: #282828;
+  --secondary: #3c3836;
+}
+
+.app.cyberpunk {
+  --outer-border: #0d0c1d;
+  --middle-border: #7f00ff;
+  --inner-border: #e100ff;
+  --food-border: #ff00e1;
+  --snake-border: #00ffff;
+  --primary-text: #00ff41;
+  --secondary-text: #ff0000;
+  --food-bg: #ff7f00;
+  --primary: #020024;
+  --secondary: #090979;
+}
+
+.app.synthwave {
+  --outer-border: #3b4252;
+  --middle-border: #ffaf00;
+  --inner-border: #b94f66;
+  --food-border: #d87093;
+  --snake-border: #5e81ac;
+  --primary-text: #d87093;
+  --secondary-text: #d8dee9;
+  --food-bg: #ebcb8b;
+  --primary: #800080;
+  --secondary: #4c566a;
+}
+
+.app.sunset-sherbert {
+  --outer-border: #88b7d5;
+  --middle-border: #d9a679;
+  --inner-border: #d99175;
+  --food-border: #d9bf77;
+  --snake-border: #9ed9a4;
+  --primary-text: #88b7d5;
+  --secondary-text: #d964a1;
+  --food-bg: #d9644a;
+  --primary: #8b3e5d;
+  --secondary: #d9644a;
+}
+
+.app.miami {
+  --outer-border: #3b4252;
+  --middle-border: #d87093;
+  --inner-border: #88c0d0;
+  --food-border: #d87093;
+  --snake-border: #5e81ac;
+  --primary-text: #d87093;
+  --secondary-text: #d8dee9;
+  --food-bg: #ebcb8b;
+  --primary: #2e3440;
+  --secondary: #4c566a;
+}
+
+.app.dracula {
+  --outer-border: #44475a;
+  --middle-border: #6272a4;
+  --inner-border: #bd93f9;
+  --food-border: #ff79c6;
+  --snake-border: #ffb86c;
+  --primary-text: #f8f8f2;
+  --secondary-text: #8be9fd;
+  --food-bg: #50fa7b;
+  --primary: #282a36;
+  --secondary: #6272a4;
+}
+
+.app.nord {
+  --outer-border: #3b4252;
+  --middle-border: #434c5e;
+  --inner-border: #4c566a;
+  --food-border: #d8dee9;
+  --snake-border: #e5e9f0;
+  --primary-text: #eceff4;
+  --secondary-text: #8fbcbb;
+  --food-bg: #88c0d0;
+  --primary: #2e3440;
+  --secondary: #5e81ac;
+}
+
+.app.monokai {
+  --outer-border: #c71585;
+  --middle-border: #fd971f;
+  --inner-border: #ffe792;
+  --food-border: #a6e22e;
+  --snake-border: #66d9ef;
+  --primary-text: #f8f8f2;
+  --secondary-text: #75715e;
+  --food-bg: #ae81ff;
+  --primary: #272822;
+  --secondary: #595959;
+}
+
+.app.zenburn {
+  --outer-border: #3f3f3f;
+  --middle-border: #6f6f6f;
+  --inner-border: #dcdccc;
+  --food-border: #cc9393;
+  --snake-border: #8f9d6a;
+  --primary-text: #dcdccc;
+  --secondary-text: #7f9f7f;
+  --food-bg: #f0dfaf;
+  --primary: #383838;
+  --secondary: #5f7f5f;
+}
+
+.app.mysticNight {
+  --outer-border: #1d2b53;
+  --middle-border: #7e2553;
+  --inner-border: #008751;
+  --food-border: #ab5236;
+  --snake-border: #5f574f;
+  --primary-text: #c2c3c7;
+  --secondary-text: #fff1e8;
+  --food-bg: #ff004d;
+  --primary: #000000;
+  --secondary: #333333;
+}
+
+.app.forties {
+  --outer-border: #3e3a32;
+  --middle-border: #a58b69;
+  --inner-border: #7f674f;
+  --food-border: #7f674f;
+  --snake-border: #3e3a32;
+  --primary-text: #3e3a32;
+  --secondary-text: #7f674f;
+  --food-bg: #a58b69;
+  --primary: #c1a29b; /* Darker shade for primary background */
+  --secondary: #a58b69;
+}
+
+.app.seventies {
+  --outer-border: #6d3d14;
+  --middle-border: #d58936;
+  --inner-border: #d0a150;
+  --food-border: #c36d2f;
+  --snake-border: #4f2f15;
+  --primary-text: #2f1b00;
+  --secondary-text: #f2e5bc;
+  --food-bg: #f2b775;
+  --primary: #9c6b20;
+  --secondary: #f2d6b6;
+}
+
+.app.eighties {
+  --outer-border: #ff48c4;
+  --middle-border: #2bd1fc;
+  --inner-border: #f3ea5f;
+  --food-border: #c04df9;
+  --snake-border: #ff3f3f;
+  --primary-text: #1e1e1e;
+  --secondary-text: #ffffff;
+  --food-bg: #32ff00;
+  --primary: #1b1b1b;
+  --secondary: #2f2f2f;
+}
+
+.app.nineties {
+  --outer-border: #008080; /* Teal */
+  --middle-border: #ff4500; /* OrangeRed */
+  --inner-border: #32cd32; /* LimeGreen */
+  --food-border: #ff00ff; /* Magenta */
+  --snake-border: #800080; /* Purple */
+  --primary-text: #00008b; /* DarkBlue */
+  --secondary-text: #ffffff; /* White */
+  --food-bg: #ff1493; /* DeepPink */
+  --primary: #696969; /* DimGray */
+  --secondary: #b6b5b5;
+}
+
+.app.artDeco {
+  --outer-border: #013551;
+  --middle-border: #3a405a;
+  --inner-border: #f2cf63;
+  --food-border: #f2a341;
+  --snake-border: #f23030;
+  --primary-text: #d9d9d9;
+  --secondary-text: #bcbcbc;
+  --food-bg: #f2a341;
+  --primary: #0d1137; /* Darker shade for primary background */
+  --secondary: #1c2541; /* Lighter shade for secondary background */
+}
+
+.app.galaxy {
+  --outer-border: #050a30; /* Deep Space Blue */
+  --middle-border: #1f4287; /* Galaxy Blue */
+  --inner-border: #278ea5; /* Nebula Blue */
+  --food-border: #21e6c1; /* Alien Green */
+  --snake-border: #278ea5; /* Nebula Blue */
+  --primary-text: #ffffff; /* White for text */
+  --secondary-text: #b8b8d1; /* Lighter Blue for secondary text */
+  --food-bg: #21e6c1; /* Alien Green for food background */
+  --primary: #050a30; /* Deep Space Blue for primary background */
+  --secondary: #1f4287; /* Galaxy Blue for secondary elements */
+}
+
+.app.jungleAdventure {
+  --outer-border: #154406; /* Deep Jungle Green */
+  --middle-border: #387002; /* Jungle Canopy Green */
+  --inner-border: #629632; /* Jungle Leaf Green */
+  --food-border: #e5e510; /* Bright Yellow for food */
+  --snake-border: #629632; /* Jungle Leaf Green for snake */
+  --primary-text: #ffffff; /* White for text */
+  --secondary-text: #b8b8d1; /* Lighter Blue for secondary text */
+  --food-bg: #e5e510; /* Bright Yellow for food background */
+  --primary: #154406; /* Deep Jungle Green for primary background */
+  --secondary: #387002; /* Jungle Canopy Green for secondary elements */
+}
+
+.app.desertMirage {
+  --outer-border: #8c6a48; /* Sand Dune */
+  --middle-border: #c58917; /* Desert Gold */
+  --inner-border: #f0a500; /* Golden Sun */
+  --food-border: #9c27b0; /* Mirage Purple */
+  --snake-border: #4e342e; /* Desert Shadow */
+  --primary-text: #ffffff; /* White for text */
+  --secondary-text: #bdbdbd; /* Light Grey for secondary text */
+  --food-bg: #9c27b0; /* Mirage Purple for food background */
+  --primary: #8c6a48; /* Sand Dune for primary background */
+  --secondary: #c58917; /* Desert Gold for secondary elements */
+}
+
+.app.arcticChill {
+  --outer-border: #5cacee; /* Sky Blue */
+  --middle-border: #b0e0e6; /* Powder Blue */
+  --inner-border: #e0ffff; /* Light Cyan */
+  --food-border: #ff4500; /* Orange Red for food */
+  --snake-border: #4682b4; /* Steel Blue for snake */
+  --primary-text: #000000; /* Black for text */
+  --secondary-text: #696969; /* Dim Grey for secondary text */
+  --food-bg: #ff4500; /* Orange Red for food background */
+  --primary: #5cacee; /* Sky Blue for primary background */
+  --secondary: #b0e0e6; /* Powder Blue for secondary elements */
+}
+
+.app.sunsetSerenity {
+  --outer-border: #ff6b6b;
+  --middle-border: #fdbb2d;
+  --inner-border: #3b8ea5;
+  --food-border: #f46036;
+  --snake-border: #2e294e;
+  --primary-text: #ffffff;
+  --secondary-text: #b8b8d1;
+  --food-bg: #f46036;
+  --primary: #ff6b6b;
+  --secondary: #fdbb2d;
+}
+
+.app.midnightMagic {
+  --outer-border: #1b1b2f;
+  --middle-border: #162447;
+  --inner-border: #1f4068;
+  --food-border: #e43f5a;
+  --snake-border: #1b1b2f;
+  --primary-text: #ffffff;
+  --secondary-text: #b8b8d1;
+  --food-bg: #e43f5a;
+  --primary: #1b1b2f;
+  --secondary: #162447;
+}
+
+.app.LANoir {
+  --outer-border: #2b2b2b;
+  --middle-border: #5e5e5e;
+  --inner-border: #1c1c1c;
+  --food-border: #8b0000; /* Dark Red for food border */
+  --snake-border: #000000;
+  --primary-text: #ffffff;
+  --secondary-text: #cccccc;
+  --food-bg: #8b0000; /* Dark Red for food background */
+  --primary: #000000;
+  --secondary: #1c1c1c;
+}
+
+.app.HollywoodGlam {
+  --outer-border: #ffd700; /* Gold for the outer border */
+  --middle-border: #c0c0c0; /* Silver for the middle border */
+  --inner-border: #b8860b; /* DarkGoldenRod for the inner border */
+  --food-border: #ff69b4; /* HotPink for the food border */
+  --snake-border: #8b4513; /* SaddleBrown for the snake border */
+  --primary-text: #ffffff; /* White for the primary text */
+  --secondary-text: #daa520; /* GoldenRod for the secondary text */
+  --food-bg: #ff69b4; /* HotPink for the food background */
+  --primary: #000000; /* Black for the primary background */
+  --secondary: #ffd700; /* Gold for the secondary elements */
+}
+
+.app.HollywoodPastel {
+  --outer-border: #e9bfa7; /* Adjusted Pastel Orange */
+  --middle-border: #6fb5a3; /* Adjusted Pastel Green */
+  --inner-border: #ecd55f; /* Adjusted Pastel Yellow */
+  --food-border: #e9897e; /* Adjusted Pastel Red */
+  --snake-border: #01919a; /* Adjusted Pastel Blue */
+  --primary-text: #ffffff; /* White for text */
+  --secondary-text: #c2cfd6; /* Adjusted Light Blue for secondary text */
+  --food-bg: #e9897e; /* Adjusted Pastel Red for food background */
+  --primary: #d1c3a2; /* Darker shade for primary background */
+  --secondary: #6fb5a3; /* Adjusted Pastel Green for secondary elements */
+}
+
+.app.TiffanyBlue {
+  --outer-border: #078582; /* Darker Tiffany Blue */
+  --middle-border: #83c5be; /* Darker Light Blue */
+  --inner-border: #b2ebf2; /* Light Cyan */
+  --food-border: #ff7f50; /* Coral for food border */
+  --snake-border: #00acc1; /* Dark Cyan */
+  --primary-text: #ffffff; /* White for text */
+  --secondary-text: #bdbdbd; /* Light Grey for secondary text */
+  --food-bg: #ff7f50; /* Coral for food background */
+  --primary: #0abab5; /* Tiffany Blue for primary background */
+  --secondary: #089a9c; /* Darker shade similar to Tiffany Blue for secondary elements */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #414141;
-  font-family: "VT323", monospace;
+  background-color: var(--primary);
   height: 100vh;
+}
+
+.app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "VT323", monospace;
   margin: 0;
 }
 
 #root {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100vh;
   margin: 0;

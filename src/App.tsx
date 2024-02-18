@@ -10,15 +10,23 @@ import {
   GameBorderOuter,
   InstructionText,
   Logo,
+  ThemeSelect,
+  ThemeSelectDummy,
 } from "./styles";
 import logoUrl from "./assets/snake-game-ai-gen.png";
-import { START_TEXT } from "./constants";
+import { START_TEXT, SELECT_THEME } from "./constants";
 import "@fontsource/vt323";
+import { THEMES } from "./constants";
 
 function App() {
   const [score, setScore] = useState("000");
   const [highScore, setHighScore] = useState("000");
   const [isStarted, setIsStarted] = useState(false);
+  const [theme, setTheme] = useState("");
+
+  const changeTheme = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setTheme(event.target.value);
+  };
 
   const resetGame = useCallback(() => {
     setIsStarted(false);
@@ -50,7 +58,19 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className={`app ${theme}`}>
+      {!isStarted ? (
+        <ThemeSelect value={theme} onChange={changeTheme}>
+          <option value="" disabled selected>
+            {SELECT_THEME}
+          </option>
+          {THEMES.map((theme) => (
+            <option value={theme}>{theme}</option>
+          ))}
+        </ThemeSelect>
+      ) : (
+        <ThemeSelectDummy />
+      )}
       <div>
         <ScoresContainer>
           <Score>{score}</Score>
@@ -74,7 +94,7 @@ function App() {
           <Logo src={logoUrl} alt="snake-logo" />
         </>
       )}
-    </>
+    </div>
   );
 }
 

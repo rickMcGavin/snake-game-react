@@ -118,6 +118,7 @@ const GameBoard = ({
   }, [isStarted, gameSpeedDelay, moveSnake, checkCollision]);
 
   useEffect(() => {
+    if (!isStarted) return;
     const handleKeyDown = (event: KeyboardEvent) => {
       if (DIRECTION_MAP[event.key as ArrowKeys]) {
         directionRef.current = DIRECTION_MAP[event.key as ArrowKeys];
@@ -129,9 +130,9 @@ const GameBoard = ({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [isStarted]);
 
-  useSwipe({ directionRef });
+  useSwipe({ directionRef, isActive: isStarted });
 
   return (
     <StyledGameBoard>

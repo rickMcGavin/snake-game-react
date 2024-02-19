@@ -3,11 +3,14 @@ import { Direction } from '../types';
 
 interface UseSwipeProps {
     directionRef: React.MutableRefObject<Direction>;
+    isActive: boolean;
 }
 
-const useSwipe = ({ directionRef }: UseSwipeProps) => {
+const useSwipe = ({ directionRef, isActive }: UseSwipeProps) => {
 
     useEffect(() => {
+        if (!isActive) return;
+
         let touchStartX: number = 0;
         let touchStartY: number = 0;
         let touchEndX: number = 0;
@@ -45,7 +48,7 @@ const useSwipe = ({ directionRef }: UseSwipeProps) => {
             window.removeEventListener("touchmove", handleTouchMove);
             window.removeEventListener("touchend", handleTouchEnd);
         };
-    }, [directionRef]);
+    }, [directionRef, isActive]);
 
     return directionRef;
 };

@@ -1,6 +1,6 @@
 # Snake Game in React and TypeScript
 
-After going through this [snake game tutorial by freeCodeCamp](https://www.youtube.com/watch?v=uyhzCBEGaBY) and developing the game as they did in plain HTML, CSS, and JavaScript. I wanted to rebuild it in React?
+After going through this [snake game tutorial by freeCodeCamp](https://www.youtube.com/watch?v=uyhzCBEGaBY) and developing the game as they did in plain HTML, CSS, and JavaScript. I wanted to rebuild it in React.
 
 Aside from rewriting the base project in React. I add some extra features:
 - Multiple color themes to pick from

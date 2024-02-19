@@ -1,5 +1,7 @@
 # Snake Game in React and TypeScript
 
+Link to the game: [https://main--visionary-begonia-db2ace.netlify.app/](https://main--visionary-begonia-db2ace.netlify.app/)
+
 After going through this [snake game tutorial by freeCodeCamp](https://www.youtube.com/watch?v=uyhzCBEGaBY) and developing the game as they did in plain HTML, CSS, and JavaScript. I wanted to rebuild it in React.
 
 Aside from rewriting the base project in React. I add some extra features:

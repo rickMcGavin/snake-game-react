@@ -9,6 +9,7 @@ import {
   DIRECTION_MAP,
 } from "../../constants";
 import { GRID_SIZE } from "../../constants";
+import useSwipe from "../../hooks/useSwipe";
 
 interface GameBoardProps {
   isStarted: boolean;
@@ -129,6 +130,8 @@ const GameBoard = ({
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  useSwipe({ directionRef });
 
   return (
     <StyledGameBoard>

@@ -12,6 +12,9 @@ import {
   Logo,
   ThemeSelect,
   ThemeSelectDummy,
+  Controls,
+  Button,
+  GameContainer,
 } from "./styles";
 import logoUrl from "./assets/snake-game-ai-gen.png";
 import { START_TEXT, SELECT_THEME } from "./constants";
@@ -60,14 +63,17 @@ function App() {
   return (
     <div className={`app ${theme}`}>
       {!isStarted ? (
-        <ThemeSelect value={theme} onChange={changeTheme}>
-          <option value="" disabled selected>
-            {SELECT_THEME}
-          </option>
-          {THEMES.map((theme) => (
-            <option value={theme}>{theme}</option>
-          ))}
-        </ThemeSelect>
+        <Controls>
+          <Button onClick={() => setIsStarted(true)}>Start</Button>
+          <ThemeSelect value={theme} onChange={changeTheme}>
+            <option value="" disabled selected>
+              {SELECT_THEME}
+            </option>
+            {THEMES.map((theme) => (
+              <option value={theme}>{theme}</option>
+              ))}
+          </ThemeSelect>
+        </Controls>
       ) : (
         <ThemeSelectDummy />
       )}
@@ -76,6 +82,7 @@ function App() {
           <Score>{score}</Score>
           {!!parseInt(highScore) && <HighScore>{highScore}</HighScore>}
         </ScoresContainer>
+        <GameContainer>
         <GameBorderOuter>
           <GameBorderMiddle>
             <GameBorderInner>
@@ -87,13 +94,14 @@ function App() {
             </GameBorderInner>
           </GameBorderMiddle>
         </GameBorderOuter>
-      </div>
       {!isStarted && (
         <>
           <InstructionText>{START_TEXT}</InstructionText>
           <Logo src={logoUrl} alt="snake-logo" />
         </>
       )}
+        </GameContainer>
+      </div>
     </div>
   );
 }

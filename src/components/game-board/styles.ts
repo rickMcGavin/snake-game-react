@@ -7,6 +7,11 @@ export const StyledGameBoard = styled.div`
   grid-template-columns: repeat(20, 20px);
   grid-template-rows: repeat(20, 20px);
   margin: 5px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(20, 14px);
+    grid-template-rows: repeat(20, 14px);
+  }
 `;
 
 export const Snake = styled.div<{ position: Coordinate }>`

@@ -19,6 +19,10 @@ export const HighScore = styled.div`
   color: var(--secondary-text);
 `;
 
+export const GameContainer = styled.div`
+  position: relative;
+`
+
 export const GameBorderOuter = styled.div`
   border: var(--outer-border) solid 10px;
   border-radius: 30px;
@@ -47,14 +51,26 @@ export const InstructionText = styled.h1`
   text-transform: capitalize;
   padding: 30px;
   margin: 0;
+  z-index: 1;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const Logo = styled.img`
   background-color: var(--secondary);
-  position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -52%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+  @media (max-width: 600px) {
+    width: 50%;
+  }
 `;
 
 export const ThemeSelect = styled.select`
@@ -65,4 +81,27 @@ export const ThemeSelect = styled.select`
 
 export const ThemeSelectDummy = styled.div`
   height: calc(19px + 4px + 4px);
+`;
+
+export const Controls = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const Button = styled.button`
+  background-color: var(--secondary);
+  color: var(--primary-text);
+  display: none;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
+  transition: background-color 0.3s;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
 `;

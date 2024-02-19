@@ -359,6 +359,7 @@
 body {
   background-color: var(--primary);
   height: 100vh;
+  overflow:hidden;
 }
 
 .app {
@@ -368,6 +369,7 @@ body {
   justify-content: center;
   font-family: "VT323", monospace;
   margin: 0;
+  position: relative;
 }
 
 #root {

@@ -14,8 +14,8 @@ export const StyledGameBoard = styled.div`
   }
 `;
 
-export const Snake = styled.div<{ position: Coordinate }>`
-  ${({ position: { x, y } }) => {
+export const Snake = styled.div<{ $position: Coordinate }>`
+  ${({ $position: { x, y } }) => {
     return css`
       grid-column: ${x};
       grid-row: ${y};
@@ -25,8 +25,8 @@ export const Snake = styled.div<{ position: Coordinate }>`
   }}
 `;
 
-export const Food = styled.div<{ position: Coordinate }>`
-  ${({ position: { x, y } }) => {
+export const Food = styled.div<{ $position: Coordinate }>`
+  ${({ $position: { x, y } }) => {
     return css`
       grid-column: ${x};
       grid-row: ${y};

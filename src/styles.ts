@@ -105,3 +105,24 @@ export const Button = styled.button`
     display: block;
   }
 `;
+
+export const GameSpeedLabel = styled.label`
+  color: var(--secondary-text);
+  margin-bottom: 4px;
+`;
+
+
+export const GameSpeedInput = styled.input`
+  background-color: var(--secondary);
+  color: var(--primary-text);
+  font-size: 1rem;
+  max-width: 65px;
+  padding: 4px;
+`;
+
+export const GameSpeedContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`;

@@ -2,6 +2,9 @@ import { ArrowKeys, Direction } from "./types";
 
 export const START_TEXT = "Press spacebar to start the game";
 export const SELECT_THEME = "Select a theme";
+export const START = "Start";
+export const GAME_SPEED = "Game speed";
+export const THEME_SELECTION = "Theme selection";
 
 export const DIRECTION_MAP: { [key in ArrowKeys]: Direction } = {
   [ArrowKeys.ArrowUp]: Direction.Up,

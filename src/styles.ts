@@ -21,7 +21,7 @@ export const HighScore = styled.div`
 
 export const GameContainer = styled.div`
   position: relative;
-`
+`;
 
 export const GameBorderOuter = styled.div`
   border: var(--outer-border) solid 10px;
@@ -73,17 +73,29 @@ export const Logo = styled.img`
   }
 `;
 
+export const ThemeSelectContainer = styled.div`
+  align-items: center;
+  color: var(--secondary-text);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: space-between;
+`;
+
 export const ThemeSelect = styled.select`
   background-color: var(--secondary);
   color: var(--primary-text);
+  font-family: "VT323", monospace;
+  font-size: 1rem;
   padding: 4px;
 `;
 
 export const ThemeSelectDummy = styled.div`
-  height: calc(19px + 4px + 4px);
+  height: 50px;
 `;
 
 export const Controls = styled.div`
+  align-items: center;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -111,8 +123,8 @@ export const GameSpeedLabel = styled.label`
   margin-bottom: 4px;
 `;
 
-
 export const GameSpeedInput = styled.input`
+  font-family: "VT323", monospace;
   background-color: var(--secondary);
   color: var(--primary-text);
   font-size: 1rem;

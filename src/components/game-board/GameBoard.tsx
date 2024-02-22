@@ -1,5 +1,5 @@
 import { StyledGameBoard, Snake, Food } from "./styles";
-import useGameBoard  from "./useGameBoard";
+import useGameBoard from "./useGameBoard.hook";
 
 interface GameBoardProps {
   isStarted: boolean;
@@ -14,7 +14,12 @@ const GameBoard = ({
   incrementScore,
   startingGameSpeedDelay,
 }: GameBoardProps) => {
-  const { snake, food } = useGameBoard({ isStarted, resetGame, incrementScore, startingGameSpeedDelay });
+  const { snake, food } = useGameBoard({
+    isStarted,
+    resetGame,
+    incrementScore,
+    startingGameSpeedDelay,
+  });
 
   return (
     <StyledGameBoard>

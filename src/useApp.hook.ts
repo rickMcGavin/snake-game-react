@@ -1,5 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import { STARTING_GAME_SPEED_DELAY } from "./constants";
+import {
+  GAME_SPEED_WARNING,
+  STARTING_GAME_SPEED_DELAY,
+  MIN_SPEED,
+  MAX_SPEED,
+} from "./constants";
 
 const useApp = () => {
   const [score, setScore] = useState("000");
@@ -14,11 +19,22 @@ const useApp = () => {
     setTheme(event.target.value);
   };
 
+  const handleGameStart = useCallback(() => {
+    if (
+      Number(startingGameSpeedDelay) < MIN_SPEED ||
+      Number(startingGameSpeedDelay) > MAX_SPEED
+    ) {
+      alert(GAME_SPEED_WARNING);
+      setIsStarted(false);
+    } else {
+      setIsStarted(true);
+    }
+  }, [startingGameSpeedDelay, setIsStarted]);
+
   const handleSetStartingGameSpeedDelay = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const num = Number(event.target.value);
-    if (num < 50 || num > 1000) return;
     setStartingGameSpeedDelay(num);
   };
 
@@ -40,7 +56,7 @@ const useApp = () => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.code === "Space" || event.key === " ") {
-        return setIsStarted(true);
+        return handleGameStart();
       }
     };
 
@@ -49,14 +65,14 @@ const useApp = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [handleGameStart]);
 
   return {
     changeTheme,
     handleSetStartingGameSpeedDelay,
     resetGame,
     handleIncrementScore,
-    setIsStarted,
+    handleGameStart,
     isStarted,
     score,
     highScore,

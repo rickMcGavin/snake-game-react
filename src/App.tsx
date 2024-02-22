@@ -27,6 +27,8 @@ import {
   START,
   GAME_SPEED,
   THEME_SELECTION,
+  MIN_SPEED,
+  MAX_SPEED,
 } from "./constants";
 import "@fontsource/vt323";
 import useApp from "./useApp.hook";
@@ -42,20 +44,20 @@ function App() {
     handleIncrementScore,
     handleSetStartingGameSpeedDelay,
     resetGame,
-    setIsStarted,
+    handleGameStart,
   } = useApp();
   return (
     <div className={`app ${theme}`}>
       {!isStarted ? (
         <Controls>
-          <Button onClick={() => setIsStarted(true)}>{START}</Button>
+          <Button onClick={handleGameStart}>{START}</Button>
           <GameSpeedContainer>
             <GameSpeedLabel htmlFor="game-speed">{GAME_SPEED}</GameSpeedLabel>
             <GameSpeedInput
               id="game-speed"
               type="number"
-              min="50"
-              max="1000"
+              min={MIN_SPEED}
+              max={MAX_SPEED}
               step="10"
               value={startingGameSpeedDelay}
               onChange={handleSetStartingGameSpeedDelay}

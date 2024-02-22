@@ -4,6 +4,7 @@ import { Direction, ArrowKeys } from "../../types";
 import { getRandomCoordinate } from "../../utils/getRandomCoordinate";
 import {
   DIRECTION_MAP,
+  MIN_SPEED,
   STARTING_SNAKE_COORDINATE,
 } from "../../constants";
 import { GRID_SIZE } from "../../constants";
@@ -22,9 +23,7 @@ const useGameBoard = ({
   incrementScore,
   startingGameSpeedDelay,
 }: UseGameBoardProps) => {
-  const [gameSpeedDelay, setGameSpeedDelay] = useState(
-    startingGameSpeedDelay
-  );
+  const [gameSpeedDelay, setGameSpeedDelay] = useState(startingGameSpeedDelay);
   const [snake, setSnake] = useState<Coordinate[]>([STARTING_SNAKE_COORDINATE]);
   const [food, setFood] = useState<Coordinate>(getRandomCoordinate());
 
@@ -34,7 +33,7 @@ const useGameBoard = ({
   const increaseSpeed = useCallback(() => {
     setGameSpeedDelay((prev) => {
       const newSpeed = prev * 0.933;
-      return Math.max(newSpeed, 50); // Don't go below 50
+      return Math.max(newSpeed, MIN_SPEED); // Don't go below 50
     });
   }, []);
 
@@ -132,7 +131,6 @@ const useGameBoard = ({
   }, [isStarted]);
 
   useSwipe({ directionRef, isActive: isStarted });
-
 
   return { snake, food };
 };

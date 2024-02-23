@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   GAME_SPEED_WARNING,
   STARTING_GAME_SPEED_DELAY,
@@ -7,13 +7,13 @@ import {
 } from "./constants";
 
 const useApp = () => {
-  const [score, setScore] = useState("000");
-  const [highScore, setHighScore] = useState("000");
+  const [score, setScore] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
   const [theme, setTheme] = useState("");
   const [startingGameSpeedDelay, setStartingGameSpeedDelay] = useState(
     STARTING_GAME_SPEED_DELAY
   );
+  const highScore = useRef(0);
 
   const changeTheme = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTheme(event.target.value);
@@ -40,16 +40,16 @@ const useApp = () => {
 
   const resetGame = useCallback(() => {
     setIsStarted(false);
-    setScore("000");
+    setScore(0);
   }, []);
 
   const handleIncrementScore = useCallback(() => {
     setScore((prevScore) => {
-      const newScore = parseInt(prevScore) + 1;
-      if (newScore > parseInt(highScore)) {
-        setHighScore(newScore.toString().padStart(3, "0"));
+      const newScore = prevScore + 1;
+      if (newScore > highScore.current) {
+        highScore.current = newScore;
       }
-      return newScore.toString().padStart(3, "0");
+      return newScore;
     });
   }, [highScore]);
 
@@ -74,8 +74,8 @@ const useApp = () => {
     handleIncrementScore,
     handleGameStart,
     isStarted,
-    score,
-    highScore,
+    score: score.toString().padStart(3, "0"),
+    highScore: highScore.current.toString().padStart(3, "0"),
     theme,
     startingGameSpeedDelay,
   };

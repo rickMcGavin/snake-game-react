@@ -54,6 +54,7 @@ function App() {
           <GameSpeedContainer>
             <GameSpeedLabel htmlFor="game-speed">{GAME_SPEED}</GameSpeedLabel>
             <GameSpeedInput
+              inputMode="numeric"
               id="game-speed"
               type="number"
               min={MIN_SPEED}

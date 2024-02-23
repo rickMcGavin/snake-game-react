@@ -12,9 +12,9 @@ import { Coordinate } from "./types";
 
 interface UseGameBoardProps {
   isStarted: boolean;
+  startingGameSpeedDelay: number;
   resetGame: () => void;
   incrementScore: () => void;
-  startingGameSpeedDelay: number;
 }
 
 const useGameBoard = ({
@@ -25,7 +25,8 @@ const useGameBoard = ({
 }: UseGameBoardProps) => {
   const [gameSpeedDelay, setGameSpeedDelay] = useState(startingGameSpeedDelay);
   const [snake, setSnake] = useState<Coordinate[]>([STARTING_SNAKE_COORDINATE]);
-  const [food, setFood] = useState<Coordinate>(getRandomCoordinate());
+  const initialFood = useCallback(() => getRandomCoordinate(), []);
+  const [food, setFood] = useState<Coordinate>(initialFood);
 
   // @note: useRef is used to store the current direction of the snake. We can update the value of the ref(change the direction) without causing a re-render. as a re-render slows it down slightly but noticeably
   const directionRef = useRef<Direction>(Direction.Right);
